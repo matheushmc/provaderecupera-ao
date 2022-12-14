@@ -1,0 +1,42 @@
+<script>
+    //PROBLEMA
+    /*
+    Na saída de um estádio da Copa do Mundo será feita uma amostragem para identificar a nota que avaliam a estrutura do estádio.
+    Pergunte para o usuário quantas pessoas serão abordadas.
+    Para cada pessoa abordada, será perguntado se é Homem (H) ou Mulher (M). Pergunte também a nota que avaliam o estádio.
+    Ao final do programa, apresente os seguintes dados:
+    - Quantas pessoas avaliaram com nota máxima (10)
+    - Quantas pessoas avaliaram com nota inferior a 7
+    - O número de Homens e o número de mulheres que participaram da pesquisa.
+    */
+
+    //ENTRADA
+    const pessoasAbordadas = parseInt(prompt(`informe quantas pessoas seram abordadas`))
+    let homem = 0
+    let mulher = 0
+    let nota10 = []
+    let notaInferior7 = []
+
+    //PROCESSAMENTO
+    for(contador = 1; contador <= pessoasAbordadas; contador++){
+        let genero = prompt(`informe se a pessoa de N: ${contador} é homem = H ou mulher = M`)
+        let nota = Number(prompt(`qual nota voce vai dar para o estadio`))
+
+        if(genero === "H"){
+           homem++ 
+        }else if(genero === "M"){
+           mulher++ 
+        }
+
+        if(nota === 10){
+           nota10.push(nota) 
+        }else if(nota < 7){
+           notaInferior7.push(nota) 
+        }
+    }
+
+    
+
+    //SAÍDA
+    document.write(`notas maximas ${nota10} <br/> notas inferiores a 7: ${notaInferior7} <br/> quantidade de homens ${homem} <br/> quantidade de mulheres ${mulher}`)
+</script>
